@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dinesh S — Cyber Forensics & Full Stack Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- AOS Animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+</head>
+<body class="dark-theme">
+
+  <!-- ─── LOADING SCREEN ─── -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-hex">
+        <svg viewBox="0 0 100 100" class="hex-svg">
+          <polygon points="50,3 97,27.5 97,72.5 50,97 3,72.5 3,27.5" fill="none" stroke="var(--neon-blue)" stroke-width="2"/>
+          <polygon points="50,12 88,33 88,67 50,88 12,67 12,33" fill="none" stroke="var(--neon-purple)" stroke-width="1" opacity="0.5"/>
+        </svg>
+        <span class="loader-initials">DS</span>
+      </div>
+      <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+      <p class="loader-text">INITIALIZING SYSTEM<span class="blink">_</span></p>
+    </div>
+  </div>
+
+  <!-- ─── SCROLL PROGRESS ─── -->
+  <div id="scroll-progress"></div>
+
+  <!-- ─── CUSTOM CURSOR ─── -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ─── PARTICLES BACKGROUND ─── -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ─── THEME TOGGLE ─── -->
+  <button id="theme-toggle" aria-label="Toggle theme">
+    <span class="theme-icon">☀</span>
+  </button>
+
+  <!-- ─── MUSIC TOGGLE ─── -->
+  <button id="music-toggle" aria-label="Toggle music">
+    <span>♪</span>
+  </button>
+
+  <!-- ─── NAVIGATION ─── -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket">&lt;</span>DS<span class="logo-bracket">/&gt;</span>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero" class="nav-link active" data-label="HOME">Home</a></li>
+      <li><a href="#about" class="nav-link" data-label="ABOUT">About</a></li>
+      <li><a href="#skills" class="nav-link" data-label="SKILLS">Skills</a></li>
+      <li><a href="#projects" class="nav-link" data-label="PROJECTS">Projects</a></li>
+      <li><a href="#certifications" class="nav-link" data-label="CERTS">Certs</a></li>
+      <li><a href="#contact" class="nav-link" data-label="CONTACT">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  HERO SECTION                               -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-grid">
+
+      <!-- Left: Text -->
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span class="status-dot"></span>
+          <span class="mono">Available for opportunities</span>
+        </div>
+        <h1 class="hero-name">
+          <span class="name-line">DINESH</span>
+          <span class="name-line accent-text">S</span>
+        </h1>
+        <div class="hero-roles">
+          <span class="static-role">I'm a </span>
+          <span id="typewriter" class="typewriter-text"></span>
+          <span class="cursor-blink">|</span>
+        </div>
+        <p class="hero-bio">
+          Engineering student specializing in <strong>Cyber Forensics</strong> & 
+          Information Security. Building real-world solutions at the intersection 
+          of security and full-stack development.
+        </p>
+        <div class="hero-location">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="mono">Chennai, India</span>
+        </div>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">
+            <span class="btn-icon">⬡</span> View Projects
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <span class="btn-icon">✉</span> Contact Me
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">8.4</span><span class="stat-label">CGPA</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Projects</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num">4+</span><span class="stat-label">Certs</span></div>
+        </div>
+      </div>
+
+      <!-- Right: 3D Profile Card -->
+      <div class="hero-card-wrap" id="profile-card-wrap">
+        <div class="profile-card" id="profile-card">
+          <div class="card-glow"></div>
+          <div class="card-face card-front">
+            <div class="card-avatar">
+              <div class="avatar-ring ring1"></div>
+              <div class="avatar-ring ring2"></div>
+              <div class="avatar-core">
+                <span class="avatar-initials">DS</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h2 class="card-name">Dinesh S</h2>
+              <p class="card-role">Cyber Forensics &amp; InfoSec</p>
+              <div class="card-tags">
+                <span class="tag">Security</span>
+                <span class="tag">Dev</span>
+                <span class="tag">Python</span>
+              </div>
+            </div>
+            <div class="card-circuit"></div>
+          </div>
+        </div>
+        <!-- Floating badges -->
+        <div class="float-badge badge-1"><span>⚡</span> Python</div>
+        <div class="float-badge badge-2"><span>🔐</span> Security</div>
+        <div class="float-badge badge-3"><span>⚛</span> React</div>
+      </div>
+
+    </div>
+    <!-- Scroll hint -->
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      <span class="mono scroll-label">SCROLL</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  ABOUT SECTION                              -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-number mono">01</span>
+        <h2 class="section-title">About <span class="accent-text">Me</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <!-- Left: Text -->
+        <div class="about-text" data-aos="fade-right" data-aos-delay="100">
+          <div class="glass-card about-card">
+            <p class="about-bio">
+              I'm an engineering student passionate about the convergence of <span class="highlight">cybersecurity</span> 
+              and <span class="highlight">full-stack development</span>. Currently pursuing B.Tech in Cyber Forensics & 
+              Information Security, I bridge the gap between secure system design and modern web applications.
+            </p>
+            <p class="about-bio">
+              My experience spans from building MERN stack applications to implementing 
+              <span class="highlight">cryptographic authentication systems</span> and conducting 
+              vulnerability assessments with tools like Kali Linux and Wireshark.
+            </p>
+            <div class="about-details">
+              <div class="detail-row">
+                <span class="detail-label mono">DEGREE</span>
+                <span class="detail-value">B.Tech Cyber Forensics & InfoSec</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label mono">BATCH</span>
+                <span class="detail-value">2022 – 2026</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label mono">CGPA</span>
+                <span class="detail-value accent-text">8.4 / 10</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label mono">LOCATION</span>
+                <span class="detail-value">Chennai, India</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Skill Bars -->
+        <div class="about-skills" data-aos="fade-left" data-aos-delay="200">
+          <h3 class="skill-bars-title">Core Proficiencies</h3>
+          <div class="skill-bars" id="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span>Python</span><span class="mono skill-pct">88%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span>Full Stack Dev</span><span class="mono skill-pct">82%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="82"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span>Cybersecurity</span><span class="mono skill-pct">78%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="78"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span>JavaScript / React</span><span class="mono skill-pct">80%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span>SQL & Databases</span><span class="mono skill-pct">75%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span>Network Security</span><span class="mono skill-pct">73%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="73"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  SKILLS SECTION                             -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-number mono">02</span>
+        <h2 class="section-title">Tech <span class="accent-text">Stack</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-category-card tilt-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="tilt-inner">
+            <div class="skill-icon">🌐</div>
+            <h3 class="skill-cat-title">Frontend</h3>
+            <ul class="skill-list">
+              <li><span class="skill-dot"></span>HTML5 / CSS3</li>
+              <li><span class="skill-dot"></span>JavaScript (ES6+)</li>
+              <li><span class="skill-dot"></span>React.js</li>
+              <li><span class="skill-dot"></span>Responsive Design</li>
+            </ul>
+            <div class="card-shine"></div>
+          </div>
+        </div>
+
+        <div class="skill-category-card tilt-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="tilt-inner">
+            <div class="skill-icon">⚙️</div>
+            <h3 class="skill-cat-title">Backend</h3>
+            <ul class="skill-list">
+              <li><span class="skill-dot"></span>Python</li>
+              <li><span class="skill-dot"></span>Node.js / Express</li>
+              <li><span class="skill-dot"></span>REST APIs</li>
+              <li><span class="skill-dot"></span>SQL / MongoDB</li>
+            </ul>
+            <div class="card-shine"></div>
+          </div>
+        </div>
+
+        <div class="skill-category-card tilt-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="tilt-inner">
+            <div class="skill-icon">🔐</div>
+            <h3 class="skill-cat-title">Security</h3>
+            <ul class="skill-list">
+              <li><span class="skill-dot"></span>Vulnerability Assessment</li>
+              <li><span class="skill-dot"></span>Network Security</li>
+              <li><span class="skill-dot"></span>Cryptography</li>
+              <li><span class="skill-dot"></span>Digital Forensics</li>
+            </ul>
+            <div class="card-shine"></div>
+          </div>
+        </div>
+
+        <div class="skill-category-card tilt-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="tilt-inner">
+            <div class="skill-icon">🛠</div>
+            <h3 class="skill-cat-title">Tools</h3>
+            <ul class="skill-list">
+              <li><span class="skill-dot"></span>Git / GitHub</li>
+              <li><span class="skill-dot"></span>Kali Linux</li>
+              <li><span class="skill-dot"></span>Nmap / Wireshark</li>
+              <li><span class="skill-dot"></span>VS Code / Vercel</li>
+            </ul>
+            <div class="card-shine"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tech Logos Strip -->
+      <div class="tech-strip" data-aos="fade-up" data-aos-delay="400">
+        <div class="strip-label mono">TECHNOLOGIES</div>
+        <div class="strip-logos">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">React</span>
+          <span class="tech-badge">Node.js</span>
+          <span class="tech-badge">MongoDB</span>
+          <span class="tech-badge">SQL</span>
+          <span class="tech-badge">Kali Linux</span>
+          <span class="tech-badge">Wireshark</span>
+          <span class="tech-badge">Nmap</span>
+          <span class="tech-badge">Git</span>
+          <span class="tech-badge">Vercel</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  PROJECTS SECTION                           -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-number mono">03</span>
+        <h2 class="section-title">Featured <span class="accent-text">Projects</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="flip-card" data-aos="zoom-in" data-aos-delay="0">
+          <div class="flip-inner">
+            <!-- Front -->
+            <div class="flip-front">
+              <div class="project-icon">⬡</div>
+              <div class="project-number mono">01</div>
+              <h3 class="project-title">MERN Stack Web App</h3>
+              <p class="project-summary">Full-stack web application with complete CRUD operations and RESTful architecture.</p>
+              <div class="project-tags">
+                <span>MongoDB</span><span>Express</span><span>React</span><span>Node.js</span>
+              </div>
+              <div class="flip-hint mono">HOVER TO EXPLORE →</div>
+            </div>
+            <!-- Back -->
+            <div class="flip-back">
+              <h3 class="project-title-back">MERN Stack Web App</h3>
+              <p class="project-desc">
+                A full-featured web application built on the MERN stack. Implements 
+                complete CRUD operations, JWT authentication, REST API endpoints, 
+                MongoDB data modeling, and a responsive React frontend.
+              </p>
+              <ul class="project-features">
+                <li>✓ REST API with Express.js</li>
+                <li>✓ MongoDB + Mongoose</li>
+                <li>✓ React Frontend</li>
+                <li>✓ JWT Authentication</li>
+              </ul>
+              <div class="project-btns">
+                <a href="#" class="btn-sm btn-demo">Live Demo</a>
+                <a href="#" class="btn-sm btn-github">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="flip-card" data-aos="zoom-in" data-aos-delay="150">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="project-icon">🔑</div>
+              <div class="project-number mono">02</div>
+              <h3 class="project-title">Cryptographic Auth System</h3>
+              <p class="project-summary">Secure authentication using Python cryptography, hashing, and QR code scanning.</p>
+              <div class="project-tags">
+                <span>Python</span><span>Cryptography</span><span>QR Code</span><span>Hashing</span>
+              </div>
+              <div class="flip-hint mono">HOVER TO EXPLORE →</div>
+            </div>
+            <div class="flip-back">
+              <h3 class="project-title-back">Cryptographic Auth System</h3>
+              <p class="project-desc">
+                A Python-based authentication system leveraging cryptographic hashing 
+                algorithms and dynamic QR code generation for multi-factor verification, 
+                designed for high-security access control scenarios.
+              </p>
+              <ul class="project-features">
+                <li>✓ SHA-256 / bcrypt hashing</li>
+                <li>✓ QR Code Generation</li>
+                <li>✓ Multi-factor Auth</li>
+                <li>✓ Encrypted Storage</li>
+              </ul>
+              <div class="project-btns">
+                <a href="#" class="btn-sm btn-demo">Live Demo</a>
+                <a href="#" class="btn-sm btn-github">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="flip-card" data-aos="zoom-in" data-aos-delay="300">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="project-icon">🤖</div>
+              <div class="project-number mono">03</div>
+              <h3 class="project-title">Meta Messenger Chatbot</h3>
+              <p class="project-summary">Automated chatbot for Meta Messenger with JavaScript, webhooks, and API integrations.</p>
+              <div class="project-tags">
+                <span>JavaScript</span><span>Webhooks</span><span>Meta API</span><span>Node.js</span>
+              </div>
+              <div class="flip-hint mono">HOVER TO EXPLORE →</div>
+            </div>
+            <div class="flip-back">
+              <h3 class="project-title-back">Meta Messenger Chatbot</h3>
+              <p class="project-desc">
+                An intelligent automation bot for Meta Messenger built with JavaScript. 
+                Handles webhook events, processes user messages, and integrates 
+                third-party APIs to deliver automated conversational responses.
+              </p>
+              <ul class="project-features">
+                <li>✓ Webhook Integration</li>
+                <li>✓ Meta Graph API</li>
+                <li>✓ Automated Responses</li>
+                <li>✓ Real-time Processing</li>
+              </ul>
+              <div class="project-btns">
+                <a href="#" class="btn-sm btn-demo">Live Demo</a>
+                <a href="#" class="btn-sm btn-github">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  CERTIFICATIONS SECTION                     -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section id="certifications" class="section section-alt">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-number mono">04</span>
+        <h2 class="section-title">Certifications & <span class="accent-text">Education</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="timeline-wrap">
+
+        <!-- Education -->
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="0">
+          <div class="timeline-dot education-dot">
+            <span>🎓</span>
+          </div>
+          <div class="timeline-connector"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-meta">
+              <span class="timeline-badge edu-badge">EDUCATION</span>
+              <span class="timeline-year mono">2022 – 2026</span>
+            </div>
+            <h3 class="timeline-title">B.Tech Cyber Forensics & Information Security</h3>
+            <p class="timeline-sub">Currently pursuing undergraduate degree</p>
+            <div class="timeline-score"><span class="accent-text mono">CGPA: 8.4</span></div>
+          </div>
+        </div>
+
+        <!-- Cert 1 -->
+        <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+          <div class="timeline-dot cert-dot">
+            <span>🧑‍💻</span>
+          </div>
+          <div class="timeline-connector"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-meta">
+              <span class="timeline-badge cert-badge">CERTIFICATION</span>
+            </div>
+            <h3 class="timeline-title">Full Stack Development</h3>
+            <p class="timeline-sub">MERN stack, REST APIs, deployment pipelines & cloud hosting.</p>
+          </div>
+        </div>
+
+        <!-- Cert 2 -->
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
+          <div class="timeline-dot cert-dot">
+            <span>🐧</span>
+          </div>
+          <div class="timeline-connector"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-meta">
+              <span class="timeline-badge cert-badge">CERTIFICATION</span>
+            </div>
+            <h3 class="timeline-title">Red Hat System Administration</h3>
+            <p class="timeline-sub">Linux system administration, RHEL configuration & enterprise management.</p>
+          </div>
+        </div>
+
+        <!-- Cert 3 -->
+        <div class="timeline-item" data-aos="fade-left" data-aos-delay="300">
+          <div class="timeline-dot cert-dot">
+            <span>🔒</span>
+          </div>
+          <div class="timeline-connector"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-meta">
+              <span class="timeline-badge cert-badge">CERTIFICATION</span>
+            </div>
+            <h3 class="timeline-title">Cisco Cybersecurity</h3>
+            <p class="timeline-sub">Network security fundamentals, threat detection & incident response.</p>
+          </div>
+        </div>
+
+        <!-- Cert 4 -->
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="400">
+          <div class="timeline-dot cert-dot">
+            <span>🤖</span>
+          </div>
+          <div class="timeline-connector"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-meta">
+              <span class="timeline-badge cert-badge">CERTIFICATION</span>
+            </div>
+            <h3 class="timeline-title">Microsoft LLM & Deployment</h3>
+            <p class="timeline-sub">Large Language Models, Azure AI services & production deployment strategies.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  CONTACT SECTION                            -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-number mono">05</span>
+        <h2 class="section-title">Get in <span class="accent-text">Touch</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- Left: Info -->
+        <div class="contact-info" data-aos="fade-right" data-aos-delay="100">
+          <div class="glass-card contact-card">
+            <h3 class="contact-heading">Let's build something together.</h3>
+            <p class="contact-text">
+              I'm open to internships, collaborations, and interesting projects in 
+              cybersecurity or full-stack development. Don't hesitate to reach out.
+            </p>
+            <div class="contact-links">
+              <a href="mailto:dinesh@email.com" class="contact-link">
+                <span class="contact-link-icon">✉</span>
+                <span>dinesh@email.com</span>
+              </a>
+              <a href="https://linkedin.com" target="_blank" class="contact-link">
+                <span class="contact-link-icon">in</span>
+                <span>linkedin.com/in/dineshs</span>
+              </a>
+              <a href="https://github.com" target="_blank" class="contact-link">
+                <span class="contact-link-icon">⌥</span>
+                <span>github.com/dineshs</span>
+              </a>
+            </div>
+            <div class="availability">
+              <span class="status-dot pulse"></span>
+              <span class="mono">Available for opportunities</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="contact-form-wrap" data-aos="fade-left" data-aos-delay="200">
+          <form id="contact-form" class="glass-card contact-form" novalidate>
+            <div class="form-group">
+              <label class="form-label mono" for="name">NAME</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required />
+              <span class="input-line"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label mono" for="email">EMAIL</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required />
+              <span class="input-line"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label mono" for="subject">SUBJECT</label>
+              <input type="text" id="subject" name="subject" class="form-input" placeholder="Subject" required />
+              <span class="input-line"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label mono" for="message">MESSAGE</label>
+              <textarea id="message" name="message" class="form-input form-textarea" placeholder="Your message..." rows="5" required></textarea>
+              <span class="input-line"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+              <span class="btn-text">SEND MESSAGE</span>
+              <span class="btn-icon send-icon">→</span>
+            </button>
+            <div id="form-success" class="form-success hidden">
+              <span>✓</span> Message sent successfully!
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-bracket">&lt;</span>DS<span class="logo-bracket">/&gt;</span>
+      </div>
+      <p class="footer-text mono">Designed & Built by Dinesh S — Chennai, India</p>
+      <p class="footer-copy mono">© 2024 All rights reserved</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
